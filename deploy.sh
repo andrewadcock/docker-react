@@ -7,7 +7,7 @@ if [ $TRAVIS_BRANCH == 'master' ] ; then
   ssh-add ~/.ssh/id_rsa
 
 echo $(pwd)
-  #cd public
+  cd /var/www/andrewadcock/
   git init
 
   git remote add deploy "root@165.227.179.245:/var/www/andrewadcock"
