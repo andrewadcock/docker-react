@@ -2,10 +2,11 @@
 set -xe
 
 if [ $TRAVIS_BRANCH == 'master' ] ; then
+  echo "Deploying to production."
   eval "$(ssh-agent -s)"
   ssh-add ~/.ssh/id_rsa
 
-  cd public
+  cd /var/www/andrewadcock/public
   git init
 
   git remote add deploy "root@165.227.179.245:/var/www/andrewadcock"
