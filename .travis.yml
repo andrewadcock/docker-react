@@ -10,4 +10,8 @@ before_install:
 script:
 - docker run -e CI=true aadcock/docker-react npm run test -- --coverage
 deploy:
-  provider: digitalocean
+  skip_cleanup: true
+  provider: script
+  script: ".travis/deploy.sh"
+  on:
+    all_branches: true
