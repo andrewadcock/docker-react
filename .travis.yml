@@ -12,7 +12,7 @@ before_install:
   - mv travis_rsa ~/.ssh/id_rsa
   - docker build -t aadcock/docker-react -f Dockerfile.dev .
 script:
-  - docker run -e CI=true aadcock/docker-react npm run test -- --coverage
+#  - docker run -e CI=true aadcock/docker-react npm run test -- --coverage
 deploy:
   provider: script
   script: bash ./deploy.sh
