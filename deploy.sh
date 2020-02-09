@@ -6,11 +6,14 @@ if [ $TRAVIS_BRANCH == 'master' ] ; then
   eval "$(ssh-agent -s)"
   ssh-add ~/.ssh/id_rsa
 
+  echo "Clears git information"
+  rm -rf .git
+
 echo $(pwd)
-  cd /var/repo/andrewadcock
+  #cd /var/repo/andrewadcock
   git init
 
-  git remote add deploy "root@165.227.179.245:/var/www/andrewadcock"
+  git remote add deploy "root@165.227.179.245:/var/repo/andrewadcock.git"
   git config user.name "Andrew Adcock"
   git config user.email "andrewadcock+travis@gmail.com"
 
